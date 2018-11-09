@@ -1,4 +1,16 @@
 <script>
   var code = window.location.search.substring(6);
   alert(code);
+  var xhr = new XMLHttpRequest();
+  xhr.open("POST", "https://discordapp.com/api/oauth2/token", true);
+  xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+  xhr.send(JSON.stringify({
+    "client_id": "448922181062098944",
+    "client_secret": "wQwn7MiaMWtgVWmHeqBarkXaDONWBajE",
+    "grant_type": "authorization_code",
+    "code": code,
+    "redirect_uri": "http://secure.mattx8y.gq/api/discord/playevolution/return",
+    "scope": "identify"
+  }));
+  alert(xhr.response);
 </script>
