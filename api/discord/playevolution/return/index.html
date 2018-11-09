@@ -1,6 +1,18 @@
 <title>Redirecting...</title>
 <script>
   var code = window.location.search.substring(6);
+  var params = {
+    "client_id": "448922181062098944",
+    "client_secret": "wQwn7MiaMWtgVWmHeqBarkXaDONWBajE",
+    "grant_type": "authorization_code",
+    "code": code,
+    "redirect_uri": "https://secure.mattx8y.gq/api/discord/playevolution/return",
+    "scope": "identify"
+  };
+  var formData = new FormData();
+  for (var k in params) {
+    formData.append(k, params[k]);
+  };
   alert(code);
   var xhr = new XMLHttpRequest();
   xhr.onreadystatechange = function() {
@@ -10,13 +22,6 @@
     };
   };
   xhr.open("POST", "https://discordapp.com/api/oauth2/token", true);
-  xhr.setRequestHeader('Content-Type', 'application/json');
-  xhr.send(JSON.stringify({
-    "client_id": "448922181062098944",
-    "client_secret": "wQwn7MiaMWtgVWmHeqBarkXaDONWBajE",
-    "grant_type": "authorization_code",
-    "code": code,
-    "redirect_uri": "https://secure.mattx8y.gq/api/discord/playevolution/return",
-    "scope": "identify"
-  }));
+  xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+  xhr.send(formData);
 </script>
