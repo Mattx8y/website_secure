@@ -5,7 +5,7 @@
   xhr.onreadystatechange = function() {
     if (xhr.readyState === 4) {
       var response = JSON.parse(xhr.response);
-      if (response.error) throw response.error
+      if (response.error) throw response.error;
     }
   }
   xhr.open("POST", "https://discordapp.com/api/oauth2/token", true);
