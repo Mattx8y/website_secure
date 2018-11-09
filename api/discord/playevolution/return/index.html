@@ -7,8 +7,8 @@
     if (xhr.readyState === 4) {
       var response = JSON.parse(xhr.response);
       document.body.innerHTML = JSON.stringify(response);
-    }
-  }
+    };
+  };
   xhr.open("POST", "https://discordapp.com/api/oauth2/token", true);
   xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
   xhr.send(JSON.stringify({
@@ -18,5 +18,5 @@
     "code": code,
     "redirect_uri": "https://secure.mattx8y.gq/api/discord/playevolution/return",
     "scope": "identify"
-  }));
+  });
 </script>
