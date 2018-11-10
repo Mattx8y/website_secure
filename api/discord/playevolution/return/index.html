@@ -22,7 +22,7 @@
     if (xhr.readyState === 4) {
       var response = JSON.parse(xhr.response);
       if (response.error) throw response.error;
-      document.cookie = "access_token=" + response.access_token + "; refresh_token=" + response.refresh_token + ";";
+      document.cookie = "access_token=" + response.access_token + ";path=/;max-age=" + response.expires_in;
       window.location = "https://www.mattx8y.gq/projects/playevolution";
     };
   };
