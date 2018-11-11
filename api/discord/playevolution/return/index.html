@@ -16,7 +16,6 @@
     formBody.push(encodedKey + "=" + encodedValue);
   };
   formBody = formBody.join("&");
-  alert(code);
   var xhr = new XMLHttpRequest();
   xhr.onreadystatechange = function() {
     if (xhr.readyState === 4) {
