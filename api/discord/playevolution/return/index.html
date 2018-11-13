@@ -21,7 +21,7 @@
     if (xhr.readyState === 4) {
       var response = JSON.parse(xhr.response);
       if (response.error) throw response.error;
-      document.cookie = "discord_oauth2_response=" + response + ";path=/;domain=.mattx8y.gq;max-age=" + response.expires_in;
+      document.cookie = "discord_oauth2_response=" + xhr.response + ";path=/;domain=.mattx8y.gq;max-age=" + response.expires_in;
       window.location = "https://www.mattx8y.gq/projects/playevolution";
     };
   };
